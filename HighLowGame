@@ -1,0 +1,43 @@
+import random
+# Global variable
+Message_One = "Number which is thought by the system : "
+print("Hello this is HighLow game")
+print("How to play (in general) :- Bot will think a number and it will give you a clue number. We should find whether the cluenumber is greater or lesser than the number which is thought by the bot")
+print("Game rules (for this game) :- Enter H if you felt that Cluenumber is greater than the Think number")
+print("Game rules (for this game) :- Enter L if you felt that Cluenumber is lesser than the Think number")
+print("Game rules (for this game) :- Enter J if you felt that Cluenumber is equal to the Think number")
+print("-----------------------------------------------------------------")
+while(1):
+    Think_Number = random.randrange(1,100)
+    Clue_Number = random.randrange(1,100)
+    print("Clue number :- ", Clue_Number)
+    Your_Choice = str(input("Enter your choice :- "))
+    Uppercased_Your_Choice = Your_Choice.upper() 
+    if Uppercased_Your_Choice == 'H' and Clue_Number < Think_Number:
+        print("You won")
+        print(Message_One, Think_Number)
+        print("-----------------------------------------------------------------")
+    elif Uppercased_Your_Choice == 'H' and Clue_Number > Think_Number:
+        print("You lost")
+        print(Message_One, Think_Number)
+        print("-----------------------------------------------------------------")
+    elif Uppercased_Your_Choice == 'L' and Clue_Number > Think_Number:
+        print("You won")
+        print(Message_One, Think_Number)
+        print("-----------------------------------------------------------------")
+    elif Uppercased_Your_Choice == 'L' and Clue_Number < Think_Number:
+        print("You lost")
+        print(Message_One, Think_Number)
+        print("-----------------------------------------------------------------")
+    elif Uppercased_Your_Choice == 'J' and Clue_Number == Think_Number:
+        print("You won")
+        print(Message_One, Think_Number)
+        print("-----------------------------------------------------------------")
+    elif Uppercased_Your_Choice == 'J' and Clue_Number != Think_Number:
+        print("You lost")  
+        print(Message_One, Think_Number)
+        print("-----------------------------------------------------------------")
+    else:
+        print("Enter correct choice")
+        print("-----------------------------------------------------------------")
+    
